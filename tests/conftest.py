@@ -21,6 +21,7 @@ from invenio_db import db
 from invenio_indexer.api import RecordIndexer
 from invenio_records_rest.utils import allow_all
 from invenio_search import current_search
+from sqlalchemy import text
 
 from invenio_circulation.api import Loan
 from invenio_circulation.permissions import loan_read_access
@@ -205,7 +206,7 @@ def users(db, base_app):
     """Create admin, manager and user."""
     # with Postgresql, when dropping the User table, the sequence is not
     # automatically reset to 1, causing issues with the tests demo data.
-    db.session.execute("ALTER SEQUENCE IF EXISTS accounts_user_id_seq RESTART")
+    db.session.execute(text("ALTER SEQUENCE IF EXISTS accounts_user_id_seq RESTART"))
     db.session.commit()
 
     base_app.config["CIRCULATION_VIEWS_PERMISSIONS_FACTORY"] = (
