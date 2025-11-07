@@ -78,6 +78,11 @@
       },
       "trigger": {
         "type": "keyword"
+      },
+      "extensions": {
+        "type": "object",
+        "dynamic": true,
+        "enabled": true
       }
     }
   }
