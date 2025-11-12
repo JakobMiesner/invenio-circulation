@@ -29,5 +29,5 @@ jobs:
     with:
       extras: 'postgresql,tests'
       python-version: '["3.9"]'
-      db-service: '["postgresql13", "postgresql14"]'
+      db-service: '["postgresql14"]'
       search-service: '["elasticsearch7", "opensearch2"]'
