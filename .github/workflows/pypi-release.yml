@@ -14,6 +14,6 @@ on:
 
 jobs:
   Build-N-Publish:
-    uses: inveniosoftware/workflows/.github/workflows/pypi-publish.yml@master
+    uses: JakobMiesner/workflows/.github/workflows/pypi-publish.yml@master
     secrets: inherit
 
